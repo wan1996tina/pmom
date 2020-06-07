@@ -16,7 +16,8 @@ export default new Vuex.Store({
     // 目前
     current: '',
     // 是否休息中
-    isBreak: false
+    isBreak: false,
+    progressNow: 0
   },
   mutations: {
     selectAlarm (state, data) {
@@ -46,6 +47,7 @@ export default new Vuex.Store({
       if (state.isBreak) {
         state.current = '休息一下'
       } else if (!state.isBreak) {
+        state.showProgress = 0
         state.current = state.todos[0].name
         state.todos.splice(0, 1)
       }
@@ -59,6 +61,15 @@ export default new Vuex.Store({
       }
       state.current = ''
       state.timeleft = state.isBreak ? timeleftBreak : timeleft
+    },
+    showProgress (state, data) {
+      state.progressNow += data
+      if (state.progressNow >= 100) {
+        state.progressNoe = 100
+      }
+    },
+    reset (state) {
+      state.progressNow = 0
     }
   },
   actions: {
@@ -80,6 +91,9 @@ export default new Vuex.Store({
     },
     isBreak (state) {
       return state.isBreak
+    },
+    progressNow (state) {
+      return state.progressNow
     }
   },
   plugins: [createPersistedState()]

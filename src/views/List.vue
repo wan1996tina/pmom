@@ -1,5 +1,5 @@
 <template>
-    <div id="list">
+    <div id="list" class="animated slideInRight">
       <b-form-input v-model="newtodo" ></b-form-input>
       <b-btn variant="success" @click="addTodo" >新增</b-btn>
       <b-table-simple>
