@@ -1,34 +1,36 @@
 <template>
   <div id="home">
-    <div class="container bg-warning">
+    <div class="container-fluid">
+    <VueParticles style="position:absolute;height:100vh;width:100vw;z-index:0;"></VueParticles>
+
       <h1>{{currentText}}</h1>
-    <vep
-      :progress="progressNow"
-      :size="this.vepData.size"
-      :line="this.vepData.line"
-      :thickness="this.vepData.thickness"
-      :emptyThickness="this.vepData.emptyThickness"
-      :color="this.vepData.color"
-      :animation="this.vepData.animation"
-    ></vep>
+      <vep
+        :progress="progressNow"
+        :size="this.vepData.size"
+        :line="this.vepData.line"
+        :thickness="this.vepData.thickness"
+        :emptyThickness="this.vepData.emptyThickness"
+        :color="this.vepData.color"
+        :animation="this.vepData.animation"
+        :fontColor="this.vepData.fontcolor"
+        :fontSize="this.vepData.fontSize"
+      ></vep>
 
-    <h2>{{timetext}}</h2>
-    <b-btn variant="primary" v-if="status != 1" @click="start">
-      <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
-    </b-btn>
-    <b-btn variant="primary" v-if="status == 1" @click="pause">
-      <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
-    </b-btn>
-    <b-btn variant="primary" v-if="current.length > 0 || todos.length > 0" @click="finish(true)">
-      <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
-    </b-btn>
+      <h2>{{timetext}}</h2>
+      <b-btn variant="primary" v-if="status != 1" @click="start" style="z-index:2;">
+        <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
+      </b-btn>
+      <b-btn variant="primary" v-if="status == 1" @click="pause">
+        <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
+      </b-btn>
+      <b-btn variant="primary" v-if="current.length > 0 || todos.length > 0" @click="finish(true)">
+        <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
+      </b-btn>
     </div>
-
   </div>
 </template>
 
 <script>
-
 export default {
   data () {
     return {
@@ -40,9 +42,11 @@ export default {
       vepData: {
         size: 300,
         line: 'butt',
-        thickness: 55,
-        emptyThickness: 55,
+        thickness: 20,
+        emptyThickness: 20,
         color: '#FAA273',
+        fontcolor: '#fff',
+        fontSize: '30px',
         gradient: {
           radial: false,
           colors: [

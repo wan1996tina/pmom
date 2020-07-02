@@ -21,6 +21,7 @@ import VueEllipseProgress from 'vue-ellipse-progress'
 import VueAnalytics from 'vue-analytics'
 // 根據 icon 的種類引用
 import { faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faHome, faListUl, faCog } from '@fortawesome/free-solid-svg-icons'
+import VueParticles from '../src/components/particle.vue'
 
 library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faHome, faListUl, faCog)
 
@@ -28,6 +29,8 @@ library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForw
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('draggable', draggable)
 Vue.use(VueEllipseProgress, 'vep')
+Vue.component('VueParticles', VueParticles)
+
 Vue.use(VueAnalytics, {
   id: 'UA-168209374-1'
 })
