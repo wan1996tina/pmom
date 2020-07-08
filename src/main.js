@@ -20,10 +20,10 @@ import VueEllipseProgress from 'vue-ellipse-progress'
 // google分析用套件
 import VueAnalytics from 'vue-analytics'
 // 根據 icon 的種類引用
-import { faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faHome, faListUl, faCog } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faHome, faListUl, faCog, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import VueParticles from '../src/components/particle.vue'
 
-library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faHome, faListUl, faCog)
+library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward, faHome, faListUl, faCog, faTrashAlt)
 
 // 註冊元件
 Vue.component('font-awesome-icon', FontAwesomeIcon)

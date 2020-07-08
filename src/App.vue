@@ -1,5 +1,7 @@
 <template>
-  <div id="app"  >
+  <div id="app">
+    <VueParticles style="position:absolute; height:100vh; width:100vw; z-index:0;"></VueParticles>
+
     <Slide>
     <div class="p-0 ">
       <b-nav vertical id="nav">
@@ -21,6 +23,7 @@
     </b-nav>
     </div>
     </Slide>
+
     <keep-alive>
       <router-view />
     </keep-alive>

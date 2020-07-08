@@ -1,10 +1,11 @@
 <template>
   <div id="home">
     <div class="container-fluid">
-    <VueParticles style="position:absolute;height:100vh;width:100vw;z-index:0;"></VueParticles>
-
+      <!-- <div class="backdrop"></div> -->
       <h1>{{currentText}}</h1>
-      <vep
+      <div class="clock_shadow">
+        <div class="shadow_in"></div>
+        <vep
         :progress="progressNow"
         :size="this.vepData.size"
         :line="this.vepData.line"
@@ -12,9 +13,18 @@
         :emptyThickness="this.vepData.emptyThickness"
         :color="this.vepData.color"
         :animation="this.vepData.animation"
-        :fontColor="this.vepData.fontcolor"
-        :fontSize="this.vepData.fontSize"
-      ></vep>
+        fontColor='white'
+        fontSize='1.5rem'
+        :legend="false"
+        >
+          <span slot="legend-caption" style="font-size: 2.5rem; color: white;">
+          <span>{{ time_min }}</span>
+          <span class="mx-2">:</span>
+          <span>{{ time_sec }}</span>
+          </span>
+        </vep>
+        <div :class="{anim:addAnim}" :style="anim"></div>
+      </div>
 
       <h2>{{timetext}}</h2>
       <b-btn variant="primary" v-if="status != 1" @click="start" style="z-index:2;">
@@ -46,7 +56,7 @@ export default {
         emptyThickness: 20,
         color: '#FAA273',
         fontcolor: '#fff',
-        fontSize: '30px',
+        fontSize: '60px',
         gradient: {
           radial: false,
           colors: [
@@ -63,7 +73,8 @@ export default {
           ]
         },
         animation: 'default 200 200'
-      }
+      },
+      addAnim: 'false'
     }
   },
   computed: {
@@ -72,7 +83,7 @@ export default {
         ? this.current
         : this.todos.length > 0
           ? '點擊開始'
-          : '請新增事項'
+          : '尚無事項'
     },
     timetext () {
       let m = Math.floor(this.timeleft / 60)
@@ -84,6 +95,20 @@ export default {
         s = '0' + s
       }
       return `${m}:${s}`
+    },
+    time_min () {
+      let m = Math.floor(this.timeleft / 60)
+      if (m / 10 <= 0) {
+        m = '0' + m
+      }
+      return m
+    },
+    time_sec () {
+      let s = Math.floor(this.timeleft % 60)
+      if (s / 10 > 0) {
+        s = '0' + s
+      }
+      return s
     },
     alarm () {
       return this.$store.getters.alarm
@@ -99,6 +124,14 @@ export default {
     },
     progressNow () {
       return this.$store.getters.progressNow
+    },
+    anim: function () {
+      return {
+        dispaly: 'block',
+        backgroundColor: 'rgba()',
+        width: '',
+        height: ''
+      }
     }
   },
   methods: {
