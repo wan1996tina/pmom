@@ -1,14 +1,17 @@
 <template>
     <div id="settings">
-      <b-table :items="items" :fields="fields" @row-clicked="selectAlarm">
+      <div class="container">
+        <h5 class="title">Settings</h5>
+      <b-table :items="items" :fields="fields" @row-clicked="selectAlarm" class="col-12 table">
         <template v-slot:cell(preview)="data">
-          <audio controls :src="'./alarms/'+data.item.file"></audio>
+          <audio controls :src="'./alarms/'+data.item.file" class="audio"></audio>
         </template>
 
         <template v-slot:cell(select)="data">
           <font-awesome-icon v-if="data.item.file == alarm" :icon="['fas','check']"></font-awesome-icon>
         </template>
       </b-table>
+      </div>
     </div>
 
 </template>
@@ -45,7 +48,7 @@ export default {
   },
   computed: {
     alarm () {
-      return this.$store.getters.alarms
+      return this.$store.getters.alarm
     }
   },
   methods: {

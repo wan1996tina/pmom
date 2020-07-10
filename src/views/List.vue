@@ -1,11 +1,12 @@
 <template>
     <div id="list">
       <div class="container d-flex align-items-center flex-column">
-        <p class="title" >List</p>
-      <b-input-group size="lg">
-        <b-form-input v-model="newtodo" class="col-10 my-3 mx-auto" placeholder="請輸入事項名稱..."></b-form-input>
+        <h5 class="title">Todo List</h5>
+      <b-input-group size="lg" class="addInput">
+        <b-form-input v-model="newtodo" class="col-10 my-3 mx-auto" placeholder="請輸入事項名稱..." @keydown.enter="addTodo">
+        </b-form-input>
       </b-input-group>
-      <b-btn variant="warning" @click="addTodo" class="col-12 my-3 btn1" >新增</b-btn>
+      <b-btn variant="light" @click="addTodo" class="col-12 my-3 btn1" >新增</b-btn>
 
       <!-- <b-table-simple>
 
@@ -46,6 +47,7 @@
       </draggable>
       </b-table-simple> -->
 <!-- 新 list 列表 --------------------------------------------------------------------------->
+
       <ul v-if="todos.length" class="col-12">
         <draggable class="dragwrap" v-model="todos" v-bind="dragOption">
           <li v-for="(todo,index) in todos" :key="index">
@@ -72,6 +74,7 @@
           </li>
         </draggable>
       </ul>
+      <span v-else class="empitySpan">朋友你好，<br >你的清單空空如也 ...</span>
       </div>
     </div>
 </template>

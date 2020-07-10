@@ -3,7 +3,7 @@
     <VueParticles style="position:absolute; height:100vh; width:100vw; z-index:0;"></VueParticles>
 
     <Slide>
-    <div class="p-0 ">
+    <div class="">
       <b-nav vertical id="nav">
       <b-nav-item>
         <router-link to="/">

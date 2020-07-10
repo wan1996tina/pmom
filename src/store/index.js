@@ -65,7 +65,7 @@ export default new Vuex.Store({
     showProgress (state, data) {
       state.progressNow += data
       if (state.progressNow >= 100) {
-        state.progressNoe = 100
+        state.progressNow = 100
       }
     },
     reset (state) {

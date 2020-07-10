@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <!-- <div class="backdrop"></div> -->
       <h1>{{currentText}}</h1>
-      <div class="clock_shadow">
+      <!-- <div class="clock_shadow">
         <div class="shadow_in"></div>
         <vep
         :progress="progressNow"
@@ -23,19 +23,21 @@
           <span>{{ time_sec }}</span>
           </span>
         </vep>
-        <div :class="{anim:addAnim}" :style="anim"></div>
-      </div>
+      </div> -->
 
       <h2>{{timetext}}</h2>
-      <b-btn variant="primary" v-if="status != 1" @click="start" style="z-index:2;">
-        <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
-      </b-btn>
-      <b-btn variant="primary" v-if="status == 1" @click="pause">
-        <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
-      </b-btn>
-      <b-btn variant="primary" v-if="current.length > 0 || todos.length > 0" @click="finish(true)">
-        <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
-      </b-btn>
+      <div class="d-flex flex-row">
+        <b-btn variant="outline-light" class="mx-1" size="lg" v-if="status != 1" @click="start" style="z-index:2;">
+          <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
+        </b-btn>
+        <b-btn variant="outline-light" class="mx-1" size="lg" v-if="status == 1" @click="pause" style="z-index:2;">
+          <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
+        </b-btn>
+        <b-btn variant="outline-light" class="mx-1" size="lg" v-if="current.length > 0 || todos.length > 0" @click="finish(true)" style="z-index:2;">
+          <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
+        </b-btn>
+      </div>
+
     </div>
   </div>
 </template>
@@ -79,11 +81,7 @@ export default {
   },
   computed: {
     currentText () {
-      return this.current.length > 0
-        ? this.current
-        : this.todos.length > 0
-          ? '點擊開始'
-          : '尚無事項'
+      return this.current.length > 0 ? this.current : this.todos.length > 0 ? '點擊開始' : '沒有事項'
     },
     timetext () {
       let m = Math.floor(this.timeleft / 60)
@@ -150,25 +148,26 @@ export default {
         if (this.todos.length > 0) {
           this.$store.commit('start')
           this.status = 1
-          const move = 100 / this.timeleft
+          // const move = 100 / this.timeleft
           this.timer = setInterval(() => {
             this.$store.commit('countdown')
-            this.$store.commit('showProgress', move)
-            console.log(this.$store.getters.progressNow)
+            // this.$store.commit('showProgress', move)
+            // console.log(this.$store.getters.progressNow)
             if (this.timeleft <= 0) {
-              clearInterval(this.timer)
-              setTimeout(() => {
-                this.finish(false)
-                this.$store.commit('reset')
-              }, 200)
+              // setTimeout(() => {
+              this.finish(false)
+              this.$store.commit('reset')
+              // }, 200)
             }
           }, 1000)
         }
       }
     },
     finish (skip) {
+      clearInterval(this.timer)
       this.status = 0
       this.$store.commit('finish')
+
       if (!skip) {
         const audio = new Audio()
         audio.src = './alarms/' + this.alarm
