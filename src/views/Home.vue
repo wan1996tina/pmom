@@ -25,8 +25,7 @@
           </span>
         </vep>
       </div>
-<br>
-      <!-- <h2>{{timetext}}</h2> -->
+        <br>
       <div class="d-flex flex-row">
         <b-btn variant="outline-light" class="mx-1" size="lg" v-if="status != 1" @click="start" style="z-index:2;">
           <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
