@@ -65,6 +65,7 @@ export default new Vuex.Store({
       }
       state.current = ''
       state.timeleft = state.isBreak ? timeleftBreak : timeleft
+      
     },
     showProgress (state, data) {
       state.progressNow += data
