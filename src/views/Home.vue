@@ -25,8 +25,8 @@
           </span>
         </vep>
       </div>
-
-      <h2>{{timetext}}</h2>
+<br>
+      <!-- <h2>{{timetext}}</h2> -->
       <div class="d-flex flex-row">
         <b-btn variant="outline-light" class="mx-1" size="lg" v-if="status != 1" @click="start" style="z-index:2;">
           <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
@@ -82,7 +82,7 @@ export default {
   },
   computed: {
     currentText () {
-      return this.current.length > 0 ? this.current : this.todos.length > 0 ? '點擊開始番茄鐘' : '沒有事項'
+      return this.current.length > 0 ? this.current : this.todos.length > 0 ? '點擊開始番茄鐘' : '目前沒有事項'
     },
     timetext () {
       let m = Math.floor(this.timeleft / 60)
