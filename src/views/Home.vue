@@ -3,7 +3,8 @@
     <div class="container-fluid">
       <!-- <div class="backdrop"></div> -->
       <h1>{{currentText}}</h1>
-      <!-- <div class="clock_shadow">
+
+      <div class="clock_shadow">
         <div class="shadow_in"></div>
         <vep
         :progress="progressNow"
@@ -23,7 +24,7 @@
           <span>{{ time_sec }}</span>
           </span>
         </vep>
-      </div> -->
+      </div>
 
       <h2>{{timetext}}</h2>
       <div class="d-flex flex-row">
@@ -81,7 +82,7 @@ export default {
   },
   computed: {
     currentText () {
-      return this.current.length > 0 ? this.current : this.todos.length > 0 ? '點擊開始' : '沒有事項'
+      return this.current.length > 0 ? this.current : this.todos.length > 0 ? '點擊開始番茄鐘' : '沒有事項'
     },
     timetext () {
       let m = Math.floor(this.timeleft / 60)
@@ -137,10 +138,12 @@ export default {
       if (this.status === 2) {
         // 暫停後繼續
         this.status = 1
+        const move = 100 / this.timeleft
         this.timer = setInterval(() => {
-          this.$store.commit('countdown')
+          this.$store.commit('countdown', move)
           if (this.timeleft <= 0) {
             this.finish(false)
+            this.$store.commit('reset')
           }
         }, 1000)
       } else {
@@ -148,9 +151,9 @@ export default {
         if (this.todos.length > 0) {
           this.$store.commit('start')
           this.status = 1
-          // const move = 100 / this.timeleft
+          const move = 100 / this.timeleft
           this.timer = setInterval(() => {
-            this.$store.commit('countdown')
+            this.$store.commit('countdown', move)
             // this.$store.commit('showProgress', move)
             // console.log(this.$store.getters.progressNow)
             if (this.timeleft <= 0) {

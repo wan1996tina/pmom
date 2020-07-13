@@ -52,8 +52,12 @@ export default new Vuex.Store({
         state.todos.splice(0, 1)
       }
     },
-    countdown (state) {
+    countdown (state, data) {
       state.timeleft--
+      state.progressNow += data
+      if (state.progressNow >= 100) {
+        state.progressNow = 100
+      }
     },
     finish (state) {
       if (state.todos.length > 0) {
