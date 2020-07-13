@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "background_pormodo1.png"
   },
   {
-    "revision": "9484604655a946ccc3b9",
+    "revision": "b24cad9d5986a4ffee9a",
     "url": "css/app.3b86f07a.css"
   },
   {
@@ -432,28 +432,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/sky.7cf9869d.jpg"
   },
   {
-    "revision": "45e6a0b17af76e58601ac8b68a366432",
+    "revision": "a3cc2143ebc082d39ec56d8a4ecfc6ae",
     "url": "index.html"
   },
   {
-    "revision": "9484604655a946ccc3b9",
-    "url": "js/app.1cd00635.js"
+    "revision": "b24cad9d5986a4ffee9a",
+    "url": "js/app.f93603ac.js"
   },
   {
     "revision": "9b9db1dfd9ee22d890b4",
     "url": "js/chunk-vendors.28be3a53.js"
   },
   {
-    "revision": "11aea16a65f830fbbbb7",
-    "url": "js/list.4046da2b.js"
+    "revision": "7310c38f906c849a5bea",
+    "url": "js/list.616d7a6a.js"
   },
   {
-    "revision": "dd0aa91c0b88423e0a5c",
-    "url": "js/notfount.b43ee58a.js"
+    "revision": "5a23419440e556c3f071",
+    "url": "js/notfount.2ab6c96b.js"
   },
   {
-    "revision": "15a5634afe4ab473d824",
-    "url": "js/settings.d77ed251.js"
+    "revision": "dcac3355aefec8950e08",
+    "url": "js/settings.e752d955.js"
   },
   {
     "revision": "3dc210960fe7e4127773465ac5d8a550",

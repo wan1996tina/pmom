@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["notfount"],{9703:function(n,t,e){"use strict";e.r(t);var u=function(){var n=this,t=n.$createElement,e=n._self._c||t;return e("h1",[n._v("404")])},l=[],o=e("2877"),c={},r=Object(o["a"])(c,u,l,!1,null,null,null);t["default"]=r.exports}}]);
-//# sourceMappingURL=notfount.b43ee58a.js.map
+//# sourceMappingURL=notfount.2ab6c96b.js.map
