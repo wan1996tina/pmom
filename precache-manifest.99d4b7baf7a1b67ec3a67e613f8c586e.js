@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "background_pormodo1.png"
   },
   {
-    "revision": "cace51a2b20d84b635f8",
-    "url": "css/app.b5c3e5f9.css"
+    "revision": "9484604655a946ccc3b9",
+    "url": "css/app.3b86f07a.css"
   },
   {
     "revision": "9b9db1dfd9ee22d890b4",
@@ -432,28 +432,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "img/sky.7cf9869d.jpg"
   },
   {
-    "revision": "f95bb28bbaffdae671a1982e274bf661",
+    "revision": "45e6a0b17af76e58601ac8b68a366432",
     "url": "index.html"
   },
   {
-    "revision": "cace51a2b20d84b635f8",
-    "url": "js/app.0312494f.js"
+    "revision": "9484604655a946ccc3b9",
+    "url": "js/app.1cd00635.js"
   },
   {
     "revision": "9b9db1dfd9ee22d890b4",
     "url": "js/chunk-vendors.28be3a53.js"
   },
   {
-    "revision": "54e95357abb192365dc8",
-    "url": "js/list.2a17a9c9.js"
+    "revision": "11aea16a65f830fbbbb7",
+    "url": "js/list.4046da2b.js"
   },
   {
     "revision": "dd0aa91c0b88423e0a5c",
     "url": "js/notfount.b43ee58a.js"
   },
   {
-    "revision": "166c178b55443ac394ae",
-    "url": "js/settings.aa85761e.js"
+    "revision": "15a5634afe4ab473d824",
+    "url": "js/settings.d77ed251.js"
   },
   {
     "revision": "3dc210960fe7e4127773465ac5d8a550",
