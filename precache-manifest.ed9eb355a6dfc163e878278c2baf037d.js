@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "alarms/alarm1.mp3"
   },
   {
-    "revision": "74f5a2043b5b63c4efffb1af3b7a2cdc",
+    "revision": "648fe7ce517d530d56b6a4c967397c3d",
     "url": "alarms/lionking.mp3"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "background_pormodo1.png"
   },
   {
-    "revision": "af5af04a4e21097f4015",
-    "url": "css/app.91a79326.css"
+    "revision": "1892053beabb4a564362",
+    "url": "css/app.294e6c07.css"
   },
   {
     "revision": "9b9db1dfd9ee22d890b4",
@@ -428,15 +428,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "fonts/-nF7OG829Oofr2wohFbTp9iFOkMQAewlpbGXhhyYs0QF3kPVyLylzU95vTq1Ltj5xQez1g.99.06608a54.woff2"
   },
   {
-    "revision": "7cf9869df27c72d13b345832becffe8a",
-    "url": "img/sky.7cf9869d.jpg"
+    "revision": "d3efbdc12d613501b21cb646878864a2",
+    "url": "img/sky.d3efbdc1.jpg"
   },
   {
-    "revision": "ad3f94b557b3dbb319be9331a6d0f75d",
+    "revision": "c4185049707b2f2560512211cb7d02c9",
     "url": "index.html"
   },
   {
-    "revision": "af5af04a4e21097f4015",
+    "revision": "1892053beabb4a564362",
     "url": "js/app.4b9ad2c2.js"
   },
   {
